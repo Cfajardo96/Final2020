@@ -28,7 +28,44 @@ A new  preventative vaccine (covid91) is under test in clinical trials. Given th
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
+# Females
 
+```{r}
+dataF=filter(FinalData,sex=='gal')
+```
+
+```{r}
+barchartGC(~infected + treatment,data=dataF)
+```
+
+```{r}
+barchartGC(~infected + treatment,data=dataF, type="percent")
+```
+
+The females who got the vaccine are less likely to get infected than the females who got the placebo.  
+
+```{r}
+table1 <- xtabs(~infected + treatment,data=dataF)
+rowPerc(table1)
+```
+
+```{r}
+colPerc(table1)
+```
+
+```{r}
+chisq.test(table1)
+```
+
+```{r}
+chisqtestGC(table1)
+```
+
+```{r}
+fisher.test(table1)
+```
+
+The odds ratio 0.5 to 1 means females who got the vaccine are half as likely to get Covid-19 as females who got the placebo.
 
 # Discussion and Conclusion
 
