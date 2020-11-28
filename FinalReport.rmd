@@ -65,7 +65,34 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
-The odds ratio 0.5 to 1 means females who got the vaccine are half as likely to get Covid-19 as females who got the placebo.
+The odds ratio 0.5 to 1 means females who got the vaccine are half as likely to get Covid-19 as females who got the placebo.  
+
+# Males
+
+```{r}
+dataM=filter(FinalData,sex=='guy')
+```
+
+```{r}
+barchartGC(~infected + treatment, data=dataM)
+barchartGC(~infected + treatment,data=dataM, type="percent")
+```
+
+The males who got the vaccine are more likely to get infected than the males who got the placebo.  
+
+```{r}
+table1 <- xtabs(~infected + treatment,data=dataM)
+rowPerc(table1)
+colPerc(table1)
+```
+
+```{r}
+chisq.test
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+The odd ratio is 1.5 to 1 so that males who have received the vaccine are 1.5 times more likely than males who have received the placebo to be infected with Covid-19, and the 95% confidence interval is greater than 1 so we know the outcome is important.  
 
 # Discussion and Conclusion
 
