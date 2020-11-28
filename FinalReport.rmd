@@ -119,9 +119,34 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
-The odd ratio is 1,5 to 1 means people in the LGBTQ community are 1.5 times more likely to get infected with Covid-19.  
+The odd ratio is 1,5 to 1 means people in the LGBTQ community are 1.5 times more likely to get infected with Covid-19. The 95% confidence interval is greater than 1 so we know the outcome is important.
 
+# Drugusers
 
+```{r}
+dataD=filter(FinalData,DrugUser=='yes')
+```
+
+```{r}
+barchartGC(~infected + treatment,data=dataD)
+barchartGC(~infected + treatment,data=dataD, type="percent")
+```
+
+The people who got the vaccine are less likely to get Covid-19 than the people who got the placebo.
+
+```{r}
+table1 <- xtabs(~infected + treatment,data=dataD)
+rowPerc(table1)
+colPerc(table1)
+```
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+The odd ratio is 0.5 to 1 drugusers community are half as likely to get infected with Covid-19 than ones who got the placebo. the 95% confidence interval is less than 1 so we know that they are protected.  
 
 # Discussion and Conclusion
 
