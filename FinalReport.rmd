@@ -94,6 +94,35 @@ fisher.test(table1)
 
 The odd ratio is 1.5 to 1 so that males who have received the vaccine are 1.5 times more likely than males who have received the placebo to be infected with Covid-19, and the 95% confidence interval is greater than 1 so we know the outcome is important.  
 
+# LGBTQ
+
+```{r}
+dataQ=filter(FinalData,LGBTQ=='gay')
+```
+
+```{r}
+barchartGC(~infected + treatment,data=dataQ)
+barchartGC(~infected + treatment,data=dataQ, type="percent")
+```
+
+The LGBTQ community who obtained the vaccine were more likely than those who received placebo to get Covid-19.  
+
+```{r}
+table1 <- xtabs(~infected + treatment,data=dataQ)
+rowPerc(table1)
+colPerc(table1)
+```
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+The odd ratio is 1,5 to 1 means people in the LGBTQ community are 1.5 times more likely to get infected with Covid-19.  
+
+
+
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
