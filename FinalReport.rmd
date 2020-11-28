@@ -151,3 +151,9 @@ The odd ratio is 0.5 to 1 drugusers community are half as likely to get infected
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+The vaccine appears to be useful in protecting females from contracting Covid-19.  
+The Vaccine appears to have a positive effect on the males. Among the males who took the vaccine, more of them contracted Covid-19.  
+Among the LGBTQ community, it appears that the vaccine is not effective in preventing them from contracting Covid-19. 
+Among the drugusers, 30% who had the virus took the vaccie and 65% who had the virus did not take the vaccine. It appears that the vaccine is effective in helping to prevent them from contracting Covid-19.  
+
